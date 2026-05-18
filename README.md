@@ -26,6 +26,7 @@ Skills are not plugins or code. They are structured instructions that make Claud
 |---|---|---|
 | [client-intelligence-scan](intelligence/client-intelligence-scan/) | Five-dimension real-time intelligence briefing for a specific company or client | "What's going on in [client's] space?" |
 | [competitive-dynamics](intelligence/competitive-dynamics/) | Extracts competitive positioning, players, win/loss signals, and white space from source documents | "Map the competitive dynamics in this doc" |
+| [security-gut-check](intelligence/security-gut-check/) | Defensive trust audit across seven risk domains for any workflow, system, or automation | "Security review this" or "gut check this workflow" |
 
 ### Engagement
 
