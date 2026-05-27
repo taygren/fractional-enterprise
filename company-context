@@ -1,0 +1,71 @@
+# Company Context
+*All agents load this file. Keep it current. The quality of advice scales directly with the quality of this context.*
+
+---
+
+## Company Identity
+- **Company Name:**
+- **Industry / Vertical:**
+- **Business Model:** (SaaS / Services / Marketplace / Product / Hybrid)
+- **Stage:** (Pre-revenue / Early / Growth / Scale / Enterprise)
+- **Founded:**
+- **HQ / Geography:**
+
+---
+
+## Financial Snapshot
+- **ARR / Revenue:**
+- **MoM / YoY Growth Rate:**
+- **Burn Rate:**
+- **Runway:**
+- **Last Funding Round:** (Stage, Amount, Date)
+- **Investors:**
+- **Path to Profitability:**
+
+---
+
+## Go-To-Market
+- **ICP (Ideal Customer Profile):**
+- **ACV / Deal Size:**
+- **Sales Cycle Length:**
+- **Primary Sales Motion:** (Inbound / Outbound / PLG / Channel)
+- **Key Channels:**
+- **Current Customers:**
+- **NRR / Retention:**
+- **CAC / LTV:**
+
+---
+
+## Product & Technology
+- **Core Product:**
+- **Key Differentiators:**
+- **Tech Stack:**
+- **Build Stage:** (MVP / Product-Market Fit / Scaling)
+- **Key Technical Risks:**
+
+---
+
+## Team
+- **Total Headcount:**
+- **Leadership Team:**
+- **Key Hiring Priorities:**
+- **Key Talent Risks:**
+
+---
+
+## Strategic Context
+- **Top 3 Priorities This Quarter:**
+- **Top 3 Risks:**
+- **Key Decisions Pending:**
+- **Competitive Landscape:**
+- **Board / Investor Dynamics:**
+
+---
+
+## Operating Cadence
+- **Fiscal Year:**
+- **Current Quarter:**
+- **OKRs / Goals:**
+
+---
+*Update this file at the start of each quarter and after major events (funding, key hires, pivots).*
