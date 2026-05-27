@@ -53,9 +53,10 @@ Skills are not plugins or code. They are structured instructions that make Claud
 
 | Skill | What It Does | Key Trigger |
 |---|---|---|
+| [agent-foundation](operations/agent-foundation/) | Builds a hierarchical CLAUDE.md + MEMORY.md workspace system for persistent, domain-aware agent behavior | "Set up my agent workspace" |
+| [ai-model-handoff](operations/ai-model-handoff/) | Packages active work into platform-native handoff prompts for seamless transfer across 12 AI platforms | `/handoff to [platform]` |
 | [scrum-standup-monitor](operations/scrum-standup-monitor/) | Transforms standup transcripts into a structured dashboard and 1-page tear sheet | "Here's our standup" |
 | [session-handoff](operations/session-handoff/) | Compacts a working session into a portable handoff document with goals, context, artifacts, decisions, and next steps | `/handoff` or "compact this session" |
-| [agent-foundation](operations/agent-foundation/) | Builds a hierarchical CLAUDE.md + MEMORY.md workspace system for persistent, domain-aware agent behavior | "Set up my agent workspace" |
 
 ---
 
