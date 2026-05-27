@@ -1,0 +1,115 @@
+# Platform Profile: Gemini
+
+**Provider:** Google DeepMind  
+**Current Flagship:** Gemini 3.1 Pro / Ultra  
+**Interface:** gemini.google.com, Google Workspace (Docs, Sheets, Gmail, Drive), API
+
+---
+
+## Strengths
+- Leads reasoning benchmarks among frontier models (Gemini 3.1 Pro)
+- 2M token context window — largest of any mainstream platform
+- Native multimodal: video, audio, images, and text in a single session
+- Deep Google Workspace integration — reads and writes Docs, Sheets, Slides, Gmail, Drive natively
+- Google ecosystem orchestration — can chain across Calendar, Meet, Search
+- Strong for data analysis tasks involving large document sets
+- Fast inference at high context lengths via Flash models
+- Multilingual capability across a broad language set
+
+## Weaknesses
+- Prose quality and instruction-following below Claude for complex structured tasks
+- Less precise at nuanced, multi-constraint instructions than Claude or ChatGPT
+- Google Workspace integration is its primary differentiator — less compelling outside that ecosystem
+- Gemini Advanced (consumer) has more limited agent capabilities than API
+
+## Context Window
+- Gemini 3.1 Pro/Ultra: 2M tokens
+- Gemini Flash: 1M tokens
+- Behavior: Strongest large-context performance of any platform; handles million-token inputs with good recall
+
+## Memory & Persistence
+- **Gems:** Custom AI personas with persistent instructions (consumer equivalent of GPTs)
+- **Google Workspace:** Work history and files persist naturally via Drive
+- **No cross-session chat memory** by default outside Workspace context
+- **Handoff note:** For Workspace-integrated work, Gemini picks up context from Drive files automatically — reference the file, don't re-paste the content
+
+## System Prompt Support
+- ✅ Full system prompt support via API
+- ✅ Gems (custom instructions) persist across sessions in Gemini Advanced
+- System instructions are respected but less robustly than Claude for highly detailed constraints
+
+## Tool Availability
+- Google Search (native, real-time)
+- Google Workspace (Docs, Sheets, Slides, Gmail, Drive, Calendar — native)
+- Code execution (Python)
+- Image, video, and audio understanding
+- YouTube video analysis (native)
+- API extensions and function calling
+
+## Prompt Format Conventions
+- Responds well to direct conversational prompts
+- Benefits from explicit role definition at the start
+- For Workspace tasks: reference files by name/link rather than pasting content
+- For large context tasks: structure the document set clearly; Gemini handles bulk well
+- Less dependent on XML-style structured prompts than Claude
+
+## Ideal Task Types
+- Massive document analysis (legal discovery, research corpora, large codebases)
+- Google Workspace automation (summarize inbox, update Sheet, draft in Docs)
+- Multimodal tasks involving video or audio
+- Research tasks requiring live Google Search integration
+- Tasks where 2M context enables analysis that other platforms can't fit
+- International/multilingual work
+- Reasoning-intensive tasks where benchmark performance matters
+
+---
+
+## Handoff Receiving Template
+
+```
+=== GEMINI HANDOFF PACKAGE ===
+Project: [name]
+Handed off from: [platform] ([phase])
+Receiving: Gemini ([phase])
+
+You are continuing work on [project name].
+
+Context: [2-sentence description of the project and what matters]
+Your role for this phase: [specific role]
+
+Current Goal: [one sentence outcome]
+
+What exists:
+[If files are in Google Drive: reference by name/link]
+[If artifacts are not in Drive: paste inline or describe]
+- [Artifact 1] — [status]
+- [Artifact 2] — [status]
+
+Decisions already made (do not re-litigate):
+- [Decision]: [choice made] — [reasoning]
+
+Your task:
+1. [First action]
+2. [Second action]
+3. [Third action]
+
+Constraints that must be preserved:
+- [Constraint 1]
+- [Constraint 2]
+
+[If using Workspace:] 
+The working document is at: [Drive link]
+Update it directly rather than producing output in chat.
+
+Re-entry: When complete, provide a summary of outputs produced,
+decisions made, and any blockers for: /handoff return from Gemini
+
+=== END ===
+```
+
+## Configuration Checklist
+- [ ] If work involves Google Drive files, share/open them before starting — Gemini reads linked files natively
+- [ ] Use Gemini Advanced or API for full tool access
+- [ ] For large document sets: upload directly or link from Drive rather than pasting
+- [ ] Enable Google Search if real-time data is needed
+- [ ] For Workspace automation: confirm Gemini has access to the relevant Google apps
