@@ -1,17 +1,5 @@
 [SKILL.md](https://github.com/user-attachments/files/28306554/SKILL.md)
 ---
-name: fractional-csuite
-version: 1.0.0
-description: >
-  Fractional C-Suite Agent System — activate when a user needs executive-level strategic
-  advice, functional expertise, or orchestrated business reviews from any C-Suite or management
-  function. Trigger when the user invokes any agent command (@ceo, @cfo, @committee, etc.),
-  runs a workflow command (/workflow qbr, /workflow swot, etc.), or describes a business
-  problem that would benefit from executive-level analysis. Comprises 38 specialized agents
-  across two tiers (7 C-Suite, 31 management), each with 3 behavioral personas, 20 orchestrated
-  workflows, and 4 crisis modes. Designed for founders, operators, and teams who need senior
-  executive thinking available on demand, calibrated to their specific company context.
----
 
 # Fractional C-Suite Agent System
 
