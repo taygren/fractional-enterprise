@@ -20,6 +20,15 @@ Skills are not plugins or code. They are structured instructions that make Claud
 
 ## Skill Index
 
+### Operations
+
+| Skill | What It Does | Key Trigger |
+|---|---|---|
+| [agent-foundation](operations/agent-foundation/) | Builds a hierarchical CLAUDE.md + MEMORY.md workspace system for persistent, domain-aware agent behavior | "Set up my agent workspace" |
+| [ai-model-handoff](operations/ai-model-handoff/) | Packages active work into platform-native handoff prompts for seamless transfer across 12 AI platforms | `/handoff to [platform]` |
+| [scrum-standup-monitor](operations/scrum-standup-monitor/) | Transforms standup transcripts into a structured dashboard and 1-page tear sheet | "Here's our standup" |
+| [session-handoff](operations/session-handoff/) | Compacts a working session into a portable handoff document with goals, context, artifacts, decisions, and next steps | `/handoff` or "compact this session" |
+
 ### Intelligence
 
 | Skill | What It Does | Key Trigger |
@@ -48,15 +57,6 @@ Skills are not plugins or code. They are structured instructions that make Claud
 |---|---|---|
 | [humanizer](optimization/humanizer/) | Removes AI writing tells and restores human voice | "This sounds like AI, fix it" || [ux-law-reviewer](optimization/ux-law-reviewer/) | Evaluates UI designs against all 30 Laws of UX across six domains; runs as review or proactive checklist | "Review this design" or "UX audit this" |
 | [ux-law-reviewer](optimization/ux-law-reviewer/) | Evaluates UI designs against all 30 Laws of UX across six domains; runs as review or proactive checklist | "Review this design" or "UX audit this" |
-
-### Operations
-
-| Skill | What It Does | Key Trigger |
-|---|---|---|
-| [agent-foundation](operations/agent-foundation/) | Builds a hierarchical CLAUDE.md + MEMORY.md workspace system for persistent, domain-aware agent behavior | "Set up my agent workspace" |
-| [ai-model-handoff](operations/ai-model-handoff/) | Packages active work into platform-native handoff prompts for seamless transfer across 12 AI platforms | `/handoff to [platform]` |
-| [scrum-standup-monitor](operations/scrum-standup-monitor/) | Transforms standup transcripts into a structured dashboard and 1-page tear sheet | "Here's our standup" |
-| [session-handoff](operations/session-handoff/) | Compacts a working session into a portable handoff document with goals, context, artifacts, decisions, and next steps | `/handoff` or "compact this session" |
 
 ---
 
