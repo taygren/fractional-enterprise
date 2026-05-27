@@ -1,0 +1,116 @@
+# Platform Profile: Perplexity
+
+**Provider:** Perplexity AI  
+**Interface:** perplexity.ai, API, mobile app  
+**Core identity:** Search-native AI — every answer is grounded in live web retrieval
+
+---
+
+## Strengths
+- Real-time web search on every query — not optional, it's the default
+- Citation-first output — every claim links to a source
+- Best platform for research that requires verifiable, current information
+- Handles multi-source synthesis naturally (reads 5–10 sources per query)
+- Spaces feature: persistent research projects with shared context
+- Fast for quick factual lookups with source verification
+- Strong for competitive intelligence, market research, and news monitoring
+- Pro Search mode: deeper reasoning over more sources for complex queries
+
+## Weaknesses
+- Not suited for long-form document production or structured writing
+- Cannot execute code or perform computational tasks
+- No persistent memory outside of Spaces
+- Less capable for complex reasoning chains than Claude or Gemini
+- Not designed for multi-step task execution
+- Output format is research-brief style — not configurable to the same degree as Claude
+
+## Context Window
+- Effective context is query-scoped — Perplexity retrieves fresh context per query
+- Spaces: maintains conversation history and uploaded files within a project
+- Behavior: not a long-context platform in the traditional sense — strength is breadth of retrieval, not depth of retained context
+
+## Memory & Persistence
+- **Spaces:** Persistent project context — uploaded documents, conversation history, shared access
+- **No cross-session memory** outside of Spaces
+- **Handoff note:** For ongoing research projects, use a Space. Share the Space link as the context anchor rather than pasting conversation history.
+
+## System Prompt Support
+- ⚠️ Limited system prompt control in consumer interface
+- ✅ API: system prompt support available
+- Custom instructions via Spaces description
+- **Handoff note:** Frame context as a research brief in the first user message rather than relying on system prompt
+
+## Tool Availability
+- Web search (always on, native)
+- Academic paper search (native)
+- YouTube and video search
+- File upload (PDF, documents for analysis within Spaces)
+- API with search integration
+- No code execution
+
+## Prompt Format Conventions
+- Prompts work best as research questions or briefs, not task instructions
+- Lead with the specific question or information need
+- Specify output format explicitly if you need structured output (default is prose with citations)
+- For complex research: use Pro Search mode and break into sub-questions
+- Reference what's already known to avoid re-covering ground
+- Ask for source types if needed: "include academic sources" or "focus on news from the last 30 days"
+
+## Ideal Task Types
+- Real-time market or competitive research
+- News monitoring and current events analysis
+- Citation-required research outputs
+- Fact-checking and source verification
+- Quick multi-source synthesis on a specific topic
+- Any research task where "is this actually true right now?" matters
+- Background research before handing off to Claude for synthesis/writing
+
+---
+
+## Handoff Receiving Template
+
+```
+=== PERPLEXITY HANDOFF PACKAGE ===
+Project: [name]
+Handed off from: [platform] ([phase])
+Receiving: Perplexity (research phase)
+
+[If using a Space: open the relevant Space before pasting]
+
+Research brief:
+
+Context: [2-sentence description of the project and why this research matters]
+
+What we already know:
+- [Finding 1 already established — don't re-research this]
+- [Finding 2]
+
+What I need you to research:
+1. [Specific research question 1]
+2. [Specific research question 2]
+3. [Specific research question 3]
+
+Source requirements:
+- [e.g., "Focus on sources from the last 6 months"]
+- [e.g., "Include analyst reports and primary sources where available"]
+- [e.g., "Prioritize primary sources over aggregators"]
+
+Output format:
+- Findings organized by question
+- Each finding linked to its source
+- Flag any conflicting information across sources
+- Note confidence level where sources are thin
+
+Re-entry: When complete, copy the full research output.
+Run: /handoff return from Perplexity
+This will be synthesized and incorporated into [destination: Claude / document / etc.]
+
+=== END ===
+```
+
+## Configuration Checklist
+- [ ] Use Pro Search for complex multi-source queries
+- [ ] Open or create a Space if this is part of ongoing research
+- [ ] Specify recency requirements in the prompt if current data matters
+- [ ] Break complex research tasks into 2–3 focused queries rather than one broad one
+- [ ] Save key findings to the Space before handing back
