@@ -1,0 +1,137 @@
+# Platform Profile: Microsoft Copilot
+
+**Provider:** Microsoft (powered by OpenAI models)  
+**Interface:** Microsoft 365 (Word, Excel, PowerPoint, Outlook, Teams), GitHub Copilot, Bing, Windows  
+**Two distinct surfaces:** M365 Copilot (productivity) and GitHub Copilot (coding)
+
+---
+
+## Strengths
+- Deepest Microsoft 365 integration of any platform — reads and writes Word, Excel, PowerPoint, Outlook, Teams natively
+- GitHub Copilot: strongest repo-integrated code completion and PR review
+- GitHub Copilot coding agent: Claude Sonnet 4.6-powered, operates on actual GitHub repos
+- Enterprise-grade security, compliance, and data governance (SOC 2, HIPAA, GDPR)
+- Works within existing Microsoft tenant — no data leaves the org boundary
+- Teams integration: meeting summaries, action items, follow-up drafts
+- Strong for business document generation within the M365 ecosystem
+
+## Weaknesses
+- Outside M365/GitHub context: less capable than Claude or ChatGPT for open-ended tasks
+- Bing Chat (consumer Copilot) is more limited than enterprise M365 Copilot
+- Less precise instruction-following than Claude for complex structured tasks
+- Custom configuration options are more limited than Claude or ChatGPT API
+
+## Context Window
+- M365 Copilot: document-scoped (entire Word/Excel file)
+- GitHub Copilot: repo-scoped with selective file loading
+- Behavior: context is defined by the file or repo being worked on, not a token limit the user manages
+
+## Memory & Persistence
+- **M365:** Work persists naturally in SharePoint, OneDrive, and Exchange
+- **GitHub Copilot:** Repo state is the persistent context; `.github/copilot-instructions.md` provides persistent configuration
+- **No cross-app memory** by default — context is scoped to the current file or repo
+- **Handoff note:** For M365 work, share the file link. For GitHub work, reference the repo and branch.
+
+## System Prompt Support
+- ✅ GitHub Copilot: `.github/copilot-instructions.md` in the repo root
+- ✅ M365 Copilot: system-level configuration via Microsoft 365 admin center
+- ⚠️ Consumer Copilot (Bing): limited system prompt control
+
+## Tool Availability
+- Microsoft 365 apps (Word, Excel, PowerPoint, Outlook, Teams, OneNote — native)
+- GitHub repo operations (PR review, issue management, code generation)
+- Bing web search (native)
+- Azure integrations
+- Microsoft Graph API access (enterprise)
+- Power Platform connectors (enterprise)
+
+## Prompt Format Conventions
+- For M365 tasks: reference the document or data directly rather than describing it
+- For GitHub tasks: reference files, functions, and PRs by path/name
+- Works well with plain language instructions; less dependent on structured formatting
+- In Teams: prompts are conversational — keep them brief and action-oriented
+- For `.github/copilot-instructions.md`: use concise, declarative rules
+
+## Ideal Task Types
+- Microsoft 365 document work (Word reports, Excel models, PowerPoint decks)
+- Outlook email drafting, summarization, and response within M365
+- Teams meeting summaries and action item extraction
+- GitHub PR review, issue triage, and code generation within a repo
+- Enterprise tasks with strict data governance requirements
+- Any work where staying inside the Microsoft tenant is a compliance requirement
+
+---
+
+## Handoff Receiving Template
+
+### For M365 Copilot
+
+```
+=== COPILOT (M365) HANDOFF PACKAGE ===
+Project: [name]
+Handed off from: [platform] ([phase])
+Receiving: Microsoft Copilot in [Word / Excel / PowerPoint / Outlook / Teams]
+
+[Open the relevant M365 file, then use Copilot within that app]
+
+Document/file: [SharePoint or OneDrive link]
+
+Context: [2-sentence description of the project and what's needed]
+
+Task: [Specific instruction for what Copilot should do with this document]
+- [Action 1]
+- [Action 2]
+
+Constraints:
+- [Style/format requirements]
+- [Content constraints]
+
+Re-entry: When complete, export/save the document and run:
+/handoff return from Copilot
+Include: link to updated document, summary of changes made
+
+=== END ===
+```
+
+### For GitHub Copilot
+
+```
+=== COPILOT (GITHUB) HANDOFF PACKAGE ===
+Project: [repo name]
+Branch: [branch name]
+Handed off from: [platform] ([phase])
+Receiving: GitHub Copilot ([phase])
+
+[Add to .github/copilot-instructions.md before starting:]
+
+## Current Task
+[What Copilot is being asked to do]
+
+## Conventions
+[Code style, naming, patterns to follow]
+
+## Do Not Modify
+[Files or directories that must not change]
+
+## Context
+[2-sentence project description]
+
+---
+
+[In GitHub Copilot chat or agent:]
+
+Continue work on [project]. What has been done: [summary].
+Your task: [explicit instruction with file references].
+Constraints: [hard limits].
+
+When done, output: files changed, decisions made, blockers.
+
+=== END ===
+```
+
+## Configuration Checklist
+- [ ] M365 Copilot: confirm Copilot license is active for the tenant
+- [ ] M365: open the target document before invoking Copilot
+- [ ] GitHub Copilot: confirm `.github/copilot-instructions.md` is updated
+- [ ] GitHub: confirm correct branch is checked out
+- [ ] Enterprise: confirm data governance policies allow the task type
